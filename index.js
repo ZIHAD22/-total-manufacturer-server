@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const products = require('./api/routers/products')
 require('dotenv').config()
 
 // database
@@ -23,6 +24,7 @@ const port = process.env.PORT || 5000
 // middleware
 app.use(cors())
 app.use(express.json())
+app.use('/products', products)
 
 // app router
 app.get('/', (req, res) => {
