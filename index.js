@@ -1,9 +1,9 @@
 const express = require('express')
+require('dotenv').config()
 const cors = require('cors')
 const mongoose = require('mongoose')
 const products = require('./api/routers/products')
 const orders = require('./api/routers/orders')
-require('dotenv').config()
 
 // database
 main().catch((err) => console.log(err))

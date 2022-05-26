@@ -45,6 +45,15 @@ const OrdersSchema = new Schema({
     required: true,
     trim: true,
   },
+  paid: {
+    type: Boolean,
+    default: false,
+    required: true,
+  },
+  transactionId: {
+    type: String,
+    default: null,
+  },
 })
 
 const Orders = model('Orders', OrdersSchema)
