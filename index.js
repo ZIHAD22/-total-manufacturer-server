@@ -4,6 +4,7 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 const products = require('./api/routers/products')
 const orders = require('./api/routers/orders')
+const reviews = require('./api/routers/reviews')
 
 // database
 main().catch((err) => console.log(err))
@@ -27,6 +28,7 @@ app.use(cors())
 app.use(express.json())
 app.use('/products', products)
 app.use('/orders', orders)
+app.use('/reviews', reviews)
 
 // app router
 app.get('/', (req, res) => {
