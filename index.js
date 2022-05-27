@@ -5,6 +5,7 @@ const mongoose = require('mongoose')
 const products = require('./api/routers/products')
 const orders = require('./api/routers/orders')
 const reviews = require('./api/routers/reviews')
+const users = require('./api/routers/user')
 
 // database
 main().catch((err) => console.log(err))
@@ -29,6 +30,7 @@ app.use(express.json())
 app.use('/products', products)
 app.use('/orders', orders)
 app.use('/reviews', reviews)
+app.use('/users', users)
 
 // app router
 app.get('/', (req, res) => {
