@@ -18,7 +18,7 @@ users.patch('/all/:id', async (req, res) => {
 users.get('/all/admin/:email', async (req, res) => {
   const userEmail = req.params.email
   const user = await Users.findOne({ userEmail })
-  const isAdmin = user.role === 'admin'
+  const isAdmin = user?.role === 'admin'
 
   res.json({ admin: isAdmin })
 })
