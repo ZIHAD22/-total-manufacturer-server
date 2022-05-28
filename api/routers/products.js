@@ -9,7 +9,13 @@ products.get('/home-products', async (req, res) => {
 })
 
 products.get('/', async (req, res) => {
-  const result = await Products.find()
+  const result = await Products.find().sort({ _id: -1 })
+  res.json(result)
+})
+products.delete('/:id', async (req, res) => {
+  const _id = req.params.id
+  const result = await Products.findByIdAndDelete({ _id })
+
   res.json(result)
 })
 
