@@ -50,6 +50,10 @@ const OrdersSchema = new Schema({
     default: false,
     required: true,
   },
+  status: {
+    type: String,
+    default: 'unpaid',
+  },
   transactionId: {
     type: String,
     default: null,

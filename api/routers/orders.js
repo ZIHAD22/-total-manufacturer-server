@@ -24,11 +24,18 @@ orders.get('/user/payment/:id', async (req, res) => {
 
 orders.patch('/user/payment/:id', async (req, res) => {
   const _id = req.params.id
-  const { transactionId } = req.body
+  const { transactionId, status } = req.body
   const result = await Orders.findOneAndUpdate(
     { _id },
-    { paid: true, transactionId },
+    { paid: true, transactionId, status },
   )
+
+  res.json(result)
+})
+orders.patch('/make-shipped/:id', async (req, res) => {
+  const _id = req.params.id
+  const { status } = req.body
+  const result = await Orders.findOneAndUpdate({ _id }, { status })
 
   res.json(result)
 })
