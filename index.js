@@ -6,6 +6,7 @@ const products = require('./api/routers/products')
 const orders = require('./api/routers/orders')
 const reviews = require('./api/routers/reviews')
 const users = require('./api/routers/user')
+const blogs = require('./api/routers/blogs')
 
 // database
 main().catch((err) => console.log(err))
@@ -31,6 +32,7 @@ app.use('/products', products)
 app.use('/orders', orders)
 app.use('/reviews', reviews)
 app.use('/users', users)
+app.use('/blogs', blogs)
 
 // app router
 app.get('/', (req, res) => {
